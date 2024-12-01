@@ -38,13 +38,13 @@ function score() {
 function scoreOutput() {
   let tbody = document.querySelector('.scoreOutput > tbody');
   let htmll = ``;
-  for (let j = 0; j <= scoreArray - 1; j++) {
+  for (let j = 0; j <= scoreArray.length - 1; j++) {
     let board = scoreArray[j];
-    let info = board.split(',');
-    htmll += `<tr> <td>${info[0]}</td> 
-            <td>${info[1]}</td> 
-            <td>${info[2]}</td> 
-            <td>${info[3]}</td> </tr> `;
+    let score = board.split(',');
+    htmll += `<tr> <td>${score[0]}</td> 
+            <td>${score[1]}</td> 
+            <td>${score[2]}</td> 
+            <td>${score[3]}</td> </tr> `;
   }
   tbody.innerHTML = htmll;
 }
