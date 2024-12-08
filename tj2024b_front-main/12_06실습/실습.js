@@ -51,7 +51,7 @@ function 로그인() {
     alert('로그인실패');
   }
   text.innerHTML = html;
-  서비스구독출력(loginUserNum);
+  서비스구독출력();
 }
 function 서비스구독(num) {
   if (loginUserNum === null) {
@@ -88,18 +88,15 @@ function 서비스구독(num) {
   서비스구독출력();
 }
 서비스구독출력();
-function 서비스구독출력(loginUserNum) {
-  let service1 = document.querySelector('.service1'); // 요소 선택
+function 서비스구독출력() {
+  let service1 = document.querySelector('.service1');
   let html = ``;
   service1.innerHTML = '';
   for (let i = 0; i < serList.length; i++) {
     let info3 = serList[i];
-    console.log(
-      `Checking service for num: ${info3.num}, loggedInNum: ${loginUserNum}`
-    );
-
-    if (info3.num == loginUserNum) {
-      if (info3.serType == 'Basic') {
+    console.log(`num: ${info3.num}, loginUserNum: ${loginUserNum}`);
+    if (info3.num === loginUserNum) {
+      if (info3.serType === 'Basic') {
         html += `<table border="1">
             <thead>
               <tr>
@@ -114,7 +111,7 @@ function 서비스구독출력(loginUserNum) {
               </tr>
             </tbody>
           </table>`;
-      } else if (info3.serType == 'Standard') {
+      } else if (info3.serType === 'Standard') {
         html += `<table border="1">
             <thead>
               <tr>
@@ -129,7 +126,7 @@ function 서비스구독출력(loginUserNum) {
               </tr>
             </tbody>
           </table>`;
-      } else if (info3.serType == 'Premium') {
+      } else if (info3.serType === 'Premium') {
         html += `<table border="1">
             <thead>
               <tr>
@@ -149,5 +146,4 @@ function 서비스구독출력(loginUserNum) {
     }
   }
   service1.innerHTML = html;
-  console.log(html);
 }
