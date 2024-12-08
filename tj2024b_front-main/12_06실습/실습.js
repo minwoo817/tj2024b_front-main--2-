@@ -86,7 +86,6 @@ function 서비스구독(num) {
   serList.push(info2);
   console.log(serList);
   서비스구독출력();
-  num++;
 }
 서비스구독출력();
 function 서비스구독출력(loginUserNum) {
